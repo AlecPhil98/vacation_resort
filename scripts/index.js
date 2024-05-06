@@ -4,7 +4,7 @@ window.onload = function () {
 
     let priceQuoteForm = document.querySelector("#priceQuoteForm")
 
-    priceQuote.addEventListener("submit", customizeStay)
+    priceQuoteForm.addEventListener("submit", customizeStay)
 
 
 }
@@ -18,8 +18,8 @@ function customizeStay(event) {
     let priceQuoteForm = event.target
 
     //room types of stay
-    let roomTotal = Number(priceQuoteForm.numOfNights.value) * getRoomRate(priceQuoteForm.checkInDate.valuelue, priceQuoteForm.roomType.value);
-    console.log(`This is the total room amount ${roomTotal} from the ${numOfNights} and ${checkInDate}`)
+    let roomTotal = Number(priceQuoteForm.numOfNights.value) * getRoomRate(priceQuoteForm.checkInDate.value, priceQuoteForm.roomType.value);
+    //console.log(`This is the total room amount ${roomTotal} from the ${numOfNights} and ${checkInDate}`)
 
     //let queennightStay = 150 * Number(priceQuoteForm.numOfNights.value);
     //let kingnightStay = 150 * Number(priceQuoteForm.numOfNights.value);
@@ -35,7 +35,7 @@ function customizeStay(event) {
 
     if (priceQuoteForm.noDiscount.checked) {
 
-        discounts = 0
+        discounts = 0;
     }
     if (priceQuoteForm.seniorDiscount.checked) {
 
@@ -52,28 +52,17 @@ function customizeStay(event) {
     //}
 
     //tax amount 
-    let discountRoom = roomTotal - (roomTotal * discounts)
-    let taxAmount = discountRoom * (12 / 100)
+    let discountRoom = roomTotal - (roomTotal * discounts);
+    let taxAmount = discountRoom * (12 / 100);
 
 
 
 
 
     //total due 
-    let totalDue = 0;
+    let totalDue = discountRoom - taxAmount;
     console.log(totalDue)
 
-
-    let message = `
-    <div class="mt-3"> Orginal Room Cost: ${roomTotal.tofixed(2)} </div>
-    <div class="mt-3"> Discount value: $${discounts.tofixed(2)} </div>
-    <div class="mt-3"> Discount room cost: $${discountRoom.tofixed(2)} </div>
-    <div class="mt-3"> Tax Amount: $${taxAmount.tofixed(2)} </div>
-    <div class="mt-3"> totalDue: ${totalDue.tofixed(2)} </div>
-    `
-
-    //put message on the screen 
-    document.querySelector("#results").innerHTML = message
 
 }
 
@@ -84,7 +73,20 @@ function getRoomRate(checkInDate, roomType) {
         return 250;
     }
 
-    return 150;
+    
+    return 150
 }
+
+
+let message = `
+<div class="mt-3"> Orginal Room Cost: ${roomTotal.tofixed(2)} </div>
+<div class="mt-3"> Discount value: $${discounts.tofixed(2)} </div>
+<div class="mt-3"> Discount room cost: $${discountRoom.tofixed(2)} </div>
+<div class="mt-3"> Tax Amount: $${taxAmount.tofixed(2)} </div>
+<div class="mt-3"> totalDue: ${totalDue.tofixed(2)} </div>
+`
+
+//put message on the screen 
+document.querySelector("#results").innerHTML = message
 
 
