@@ -25,12 +25,84 @@
                     <a class="nav-link" href="dining.html">Dining</a>
                     <a class="nav-link" href="rentCar.html">Rent a Car</a>
                     <a class="nav-link" href="activites.html">Activities</a>
-                    
+
                 </div>
             </div>
         </div>
     </nav>
+    <form id="priceQuote">
+        <!--name and email-->
+        <h3>Name and info</h3>
+        <div>
+            <label for="nameAndEmail">Enter your name and email</label>
+            <input id="nameAndEmail" name="nameAndEmail" type="text" required>
+        </div>
+        <!--check in date-->
+        <h3>How long is your stay</h3>
+        <div>
+            <label for="checkInDate">Check in Date</label>
+            <input id="checkInDate" name="checkInDate" type="date" required>
+        </div>
+        <!--number of nights for the visit(1-28)-->
+        <div>
+            <label for="numOfNights">Number of Nights (1-28)</label>
+            <input id="numOfNights" name="numOfNights" type="number" required>
+        </div>
+        <!--Room type -->
+        <h3>Type of Room </h3>
+        <div>
+            <label for="queenRoom"> Queen Bedroom</label>
+            <input id="queenRoom" name="queenRoom" type="radio">
+            <label for="kingRoom"> King Bedroom</label>
+            <input id="kingRoom" name="kingRoom" type="radio">
+            <label for="2BedRoom"> 2 Bedroom suite</label>
+            <input id="2BedRoom" name="2BedRoom" type="radio">
+        </div>
+        <!--Number of adults and children -->
+        <h3>Number Of Guests</h3>
+        <section id="numberOfGuests">
+            <div>
+                <label for="numAdults">Number of Adults</label>
+                <input id="numAdults" name="numAdults" type="number" min="1" max="4" required>
+            </div>
+            <div>
+                <label for="numChildren">Number of Children</label>
+                <input id="numChildren" name="numChildren" type="number" min="0" max="4" required>
+            </div>
+        </section>
+        <!--Discounts-->
+        <h3>Discounts</h3>
+        <div>
+            <label for="noDiscount">None</label>
+            <input id="noDiscount" name="noDiscount" type="radio">
+        </div>
+        <div>
+            <label for="seniorDiscount">AAA Senior (10%)</label>
+            <input id="seniorDiscount" name="seniorDiscount" type="radio">
+        </div>
+        <div>
+            <label for="militaryDiscount">Military(20%)</label>
+            <input id="militaryDiscount" name="militaryDiscount" type="radio">
+        </div>
+        
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
 
 
 
