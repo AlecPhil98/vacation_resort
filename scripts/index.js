@@ -60,8 +60,8 @@ function customizeStay(event) {
     let discountRoom = roomTotal - (roomTotal * discounts);
     let taxAmount = discountRoom * (12 / 100);
 
-    console.log("This is discounted room $" + discountRoom)
-    console.log("This is tax withheld after discount $" + taxAmount)
+    console.log("This is discounted room $" + discountRoom.toFixed(2))
+    console.log("This is tax withheld after discount $" + taxAmount.toFixed(2))
 
 
 
@@ -94,6 +94,7 @@ function getRoomRate(checkInDate, roomType) {
 
         return 250;
     }
+    
 
 
     return 150

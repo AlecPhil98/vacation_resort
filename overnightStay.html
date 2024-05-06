@@ -53,17 +53,17 @@
         <!--number of nights for the visit(1-28)-->
         <div>
             <label for="numOfNights">Number of Nights (1-28)</label>
-            <input id="numOfNights" name="numOfNights" type="number" required>
+            <input id="numOfNights" name="numOfNights" type="number"  min="1" max="28" required>
         </div>
         <!--Room type -->
         <h3>Type of Room </h3>
         <section id="roomType">
             <div class="form-check">
-                <input id="queenRoom" name="roomType" type="radio" min="1" max="5" checked>
+                <input id="queenRoom" name="roomType" type="radio" min="1" max="5" value="queenRoom" checked>
                 <label for="queenRoom"> Queen Bedroom</label>
-                <input id="kingRoom" name="roomType" type="radio" min="1" max="2">
+                <input id="kingRoom" name="roomType" type="radio" min="1" max="2" value="kingRoom">
                 <label for="kingRoom"> King Bedroom</label>
-                <input id="2BedRoom" name="roomType" type="radio" min="1" max="6">
+                <input id="2BedRoom" name="roomType" type="radio" min="1" max="6" value="2BedRoom">
                 <label for="2BedRoom"> 2 Bedroom suite</label>
 
             </div>
