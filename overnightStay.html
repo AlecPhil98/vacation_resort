@@ -46,6 +46,7 @@
         <!--check in date-->
         <h3>How long is your stay</h3>
         <div>
+
             <label for="checkInDate">Check in Date</label>
             <input id="checkInDate" name="checkInDate" type="date" required>
         </div>
@@ -58,12 +59,13 @@
         <h3>Type of Room </h3>
         <section id="roomType">
             <div class="form-check">
+                <input id="queenRoom" name="roomType" type="radio" min="1" max="5" checked>
                 <label for="queenRoom"> Queen Bedroom</label>
-                <input id="queenRoom" name="queenRoom" type="radio" min="1" max="5">
+                <input id="kingRoom" name="roomType" type="radio" min="1" max="2">
                 <label for="kingRoom"> King Bedroom</label>
-                <input id="kingRoom" name="kingRoom" type="radio" min="1" max="2">
+                <input id="2BedRoom" name="roomType" type="radio" min="1" max="6">
                 <label for="2BedRoom"> 2 Bedroom suite</label>
-                <input id="2BedRoom" name="2BedRoom" type="radio" min="1" max="6">
+
             </div>
         </section>
         <!--Number of adults and children -->
