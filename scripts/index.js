@@ -93,15 +93,32 @@ function customizeStay(event) {
 
 function getRoomRate(checkInDate, roomType) {
 
+
+    //get a new 
+    let newDate = document.querySelector("#checkInDate").value
+    let dateRangeMonth = new Date(newDate + "T00:00:00").toLocaleString()
+    console.log(dateRangeMonth)
+    console.log(dateRangeMonth.substring(0, 1))
+    const month = dateRangeMonth.substring(0, 1)
+
+    let roomCost = 150
+    if (month >= 6 && month <= 8) {
+        roomCost = 350
+        console.log(month);
+
+    }
+    console.log(roomCost)
+    //return 150
+
+
+
+
     //checkInDate.document.querySelector("#checkInDate")
 
-    if (roomType === "2BedRoom") {
-
-        return 210;
-    }
+    //if statments for room type
 
     if (roomType === "queenRoom") {
-
+        
         return 150;
     }
 
@@ -109,17 +126,14 @@ function getRoomRate(checkInDate, roomType) {
 
         return 150;
     }
-    
-    let newDate = document.querySelector("#checkInDate").value
-    let dateRangeMonth = new Date(newDate + "T00:00:00").toLocaleString()
-    console.log(dateRangeMonth)
-    console.log(dateRangeMonth.substring(0,1))
-    const month = dateRangeMonth.substring(0,1)
+    if (roomType === "2BedRoom") {
 
-    // if(){
+        return 210;
+    }
 
-    // }
 
-    //return 150
+
+
+
 }
 
