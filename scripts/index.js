@@ -7,7 +7,7 @@ window.onload = function () {
     priceQuoteForm.addEventListener("submit", customizeStay)
 
 
-}   
+}
 
 
 
@@ -20,8 +20,8 @@ function customizeStay(event) {
     let priceQuoteForm = event.target
 
     //number of nights stayed at 
- //let numOfNights = Number(priceQuoteForm.numOfNights.value);
- //let numOfNights = document.querySelector("#numOfNights")
+    //let numOfNights = Number(priceQuoteForm.numOfNights.value);
+    //let numOfNights = document.querySelector("#numOfNights")
 
 
     //room types of stay
@@ -36,7 +36,7 @@ function customizeStay(event) {
 
     //discounts
     let discounts = 0;
-    console.log("This is discounts " + discounts +"%")
+    console.log("This is discounts " + discounts + "%")
 
     if (priceQuoteForm.noDiscount.checked) {
 
@@ -71,20 +71,25 @@ function customizeStay(event) {
     console.log("This is total Due $" + totalDue)
 
     let message = `
-<div> Orginal Room Cost: ${roomTotal.toFixed(2)} </div>
-<div> Discount value: ${discounts.toFixed(2)}%</div>
-<div> Discount room cost: $${discountRoom.toFixed(2)} </div>
-<div> Tax Amount: $${taxAmount.toFixed(2)} </div>
-<div class="mt-3"> totalDue: $${totalDue.toFixed(2)} </div>
-`
+    <div> Orginal Room Cost: ${roomTotal.toFixed(2)} </div>
+    <div> Discount value: ${discounts.toFixed(2)}%</div>
+    <div> Discount room cost: $${discountRoom.toFixed(2)} </div>
+    <div> Tax Amount: $${taxAmount.toFixed(2)} </div>
+    <div class="mt-3"> totalDue: $${totalDue.toFixed(2)} </div>
+    `
 
-//put message on the screen 
-document.querySelector("#results").innerHTML = message
-
-
+    //put message on the screen 
+    document.querySelector("#results").innerHTML = message
 
 
+    getRoomRate()
 }
+
+
+//let newDate = document.querySelector("#checkInDate").value
+//let dateRangeMonth = new Date(newDate.value + "T00:00:00").toLocaleString()
+//console.log(dateRangeMonth)
+//const month = dateRangeMonth
 
 function getRoomRate(checkInDate, roomType) {
 
@@ -92,11 +97,29 @@ function getRoomRate(checkInDate, roomType) {
 
     if (roomType === "2BedRoom") {
 
-        return 250;
+        return 210;
+    }
+
+    if (roomType === "queenRoom") {
+
+        return 150;
+    }
+
+    if (roomType === "kingRoom") {
+
+        return 150;
     }
     
+    let newDate = document.querySelector("#checkInDate").value
+    let dateRangeMonth = new Date(newDate + "T00:00:00").toLocaleString()
+    console.log(dateRangeMonth)
+    console.log(dateRangeMonth.substring(0,1))
+    const month = dateRangeMonth.substring(0,1)
 
+    // if(){
 
-    return 150
+    // }
+
+    //return 150
 }
 
