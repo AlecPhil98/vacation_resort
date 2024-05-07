@@ -75,7 +75,7 @@ function customizeStay(event) {
     <div> Discount value: ${discounts.toFixed(2)}%</div>
     <div> Discount room cost: $${discountRoom.toFixed(2)} </div>
     <div> Tax Amount: $${taxAmount.toFixed(2)} </div>
-    <div class="mt-3"> totalDue: $${totalDue.toFixed(2)} </div>
+    <div class="mt-3"> TotalDue: $${totalDue.toFixed(2)} </div>
     `
 
     //put message on the screen 
@@ -94,39 +94,46 @@ function customizeStay(event) {
 function getRoomRate(checkInDate, roomType) {
 
 
-    //get a new 
-    let newDate = document.querySelector("#checkInDate").value
-    let dateRangeMonth = new Date(newDate + "T00:00:00").toLocaleString()
+    //get a new date
+    checkInDate = document.querySelector("#checkInDate").value
+    let dateRangeMonth = new Date(checkInDate + "T00:00:00").toLocaleString()
     console.log(dateRangeMonth)
     console.log(dateRangeMonth.substring(0, 1))
     const month = dateRangeMonth.substring(0, 1)
 
-    let roomCost = 150
-    if (month >= 6 && month <= 8) {
-        roomCost = 350
-        console.log(month);
+    // let roomCost = 150
+    // if (month >= 6 && month <= 8) {
+    //     roomCost = 350
+    //     console.log(month);
 
-    }
-    console.log(roomCost)
-    //return 150
+    // }
+    // console.log(roomCost)
+    
 
-
-
-
-    //checkInDate.document.querySelector("#checkInDate")
 
     //if statments for room type
 
     if (roomType === "queenRoom") {
-        
+        if(month >= 6 && month<= 8){
+            return 250
+
+        }
         return 150;
     }
 
     if (roomType === "kingRoom") {
+        if(month >= 6 && month<= 8){
+            return 250
+
+        }
 
         return 150;
     }
     if (roomType === "2BedRoom") {
+        if(month >= 6 && month<= 8){
+            return 350
+
+        }
 
         return 210;
     }
@@ -134,6 +141,6 @@ function getRoomRate(checkInDate, roomType) {
 
 
 
-
+ // return 150
 }
 
